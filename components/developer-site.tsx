@@ -164,11 +164,9 @@ export function DeveloperSiteComponent() {
                   className="space-y-4 text-sm md:text-base transition-all duration-300 ease-in-out"
               >
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">About Me</h3>
+                
                 <p className="text-gray-300">
-                  Hi
-                </p>
-                <p className="text-gray-300">
-                  My name is Marlon, and I am a software developer with experience in small, medium, and currently large companies, working in the field since 2020. Throughout my career, I have had the opportunity to work in environments that use microservices, ensuring the quality of banking transactions. I have also worked with legacy monolithic systems in the Java ecosystem. Currently, I am transitioning into the DevSecOps field, where I am an intern at @Compass UOL.
+                  Hi, My name is Marlon, and I am a software developer with experience in small, medium, and currently large companies, working in the field since 2020. Throughout my career, I have had the opportunity to work in environments that use microservices, ensuring the quality of banking transactions. I have also worked with legacy monolithic systems in the Java ecosystem. Currently, I am transitioning into the DevSecOps field, where I am an intern at @Compass UOL.
                 </p>
               </div>
             </div>
