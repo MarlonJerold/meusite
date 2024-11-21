@@ -249,13 +249,7 @@ export function DeveloperSiteComponent() {
                               </Button>
                           )}
                           {project.repoUrl && (
-                              <Button variant="link" asChild className="text-purple-500 hover:text-purple-400">
-                                <a href={project.repoUrl} target="_blank" rel="noopener noreferrer"
-                                   className="flex items-center">
-                                  <Github className="w-4 h-4 mr-2"/>
-                                  View Repository
-                                </a>
-                              </Button>
+                              
                           )}
                           {project.docsUrl && (
                               <Button variant="link" asChild className="text-purple-500 hover:text-purple-400">
