@@ -76,266 +76,287 @@ export function DeveloperSiteComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white font-sans flex flex-col">
-      <header className="fixed w-full z-50 bg-black/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="z-50 relative"
-            aria-label="Toggle menu"
-          >
-            <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
-            <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></div>
-            <div className={`w-6 h-0.5 bg-white transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
-          </button>
-        </div>
-      </header>
-
-      <nav
-        className={`fixed inset-0 bg-black/95 z-40 flex items-center justify-center transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
-      >
-        <ul className="text-center space-y-8">
-          {['hero', 'about', 'blog', 'projects', 'experience', 'contact'].map((section) => (
-            <li
-              key={section}
-              className="transition-all duration-300 ease-in-out"
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white font-sans flex flex-col">
+        <header className="fixed w-full z-50 bg-black/80 backdrop-blur-sm">
+          <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+            <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="z-50 relative"
+                aria-label="Toggle menu"
             >
-              <Button
-                variant="ghost"
-                className="text-2xl hover:text-purple-500 transition-colors"
-                onClick={() => {
-                  setIsMenuOpen(false)
-                  const element = document.getElementById(section)
-                  element?.scrollIntoView({ behavior: 'smooth' })
-                }}
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </Button>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <main className="flex-grow flex flex-col justify-between pt-16 pb-8 px-4">
-        <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center px-4">
-          <h2
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 transform transition-all duration-300 ease-in-out hover:scale-105"
-          >
-            I&apos;m <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Marlon</span>
-          </h2>
-          <p
-            className="text-xl md:text-2xl lg:text-3xl text-gray-400 mb-8 transform transition-all duration-300 ease-in-out hover:scale-105"
-          >
-            Software Developer | DevSecOps
-          </p>
-          <div
-            className="flex space-x-4 transform transition-all duration-300 ease-in-out hover:scale-105"
-          >
-            <Button variant="ghost" size="icon" asChild className="text-white hover:text-purple-500 transition-colors">
-              <a href="https://github.com/MarlonJerold" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="h-6 w-6" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild className="text-white hover:text-purple-500 transition-colors">
-              <a href="https://linkedin.com/in/marlonjerold" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="h-6 w-6" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild className="text-white hover:text-purple-500 transition-colors">
-              <a href="https://twitter.com/marlonjerold" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <Twitter className="h-6 w-6" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild className="text-white hover:text-purple-500 transition-colors">
-              <a href="https://patinho.tech/" target="_blank" rel="noopener noreferrer" aria-label="Blog">
-                <ExternalLink className="h-6 w-6" />
-              </a>
-            </Button>
+              <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
+              <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></div>
+              <div className={`w-6 h-0.5 bg-white transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
+            </button>
           </div>
-        </section>
+        </header>
 
-        <section id="about" className="min-h-screen flex flex-col justify-center items-center px-4">
-          <div className="max-w-2xl w-full">
+        <nav
+            className={`fixed inset-0 bg-black/95 z-40 flex items-center justify-center transition-all duration-300 ease-in-out ${
+                isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+            }`}
+        >
+          <ul className="text-center space-y-8">
+            {['hero', 'about', 'blog', 'projects', 'experience', 'contact'].map((section) => (
+                <li
+                    key={section}
+                    className="transition-all duration-300 ease-in-out"
+                >
+                  <Button
+                      variant="ghost"
+                      className="text-2xl hover:text-purple-500 transition-colors"
+                      onClick={() => {
+                        setIsMenuOpen(false)
+                        const element = document.getElementById(section)
+                        element?.scrollIntoView({ behavior: 'smooth' })
+                      }}
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </Button>
+                </li>
+            ))}
+          </ul>
+        </nav>
+
+        <main className="flex-grow flex flex-col justify-between pt-16 pb-8 px-4">
+          <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center px-4">
+            <h2
+                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 transform transition-all duration-300 ease-in-out hover:scale-105"
+            >
+              I&apos;m <span
+                className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Marlon</span>
+            </h2>
+            <p
+                className="text-xl md:text-2xl lg:text-3xl text-gray-400 mb-8 transform transition-all duration-300 ease-in-out hover:scale-105"
+            >
+              Software Developer | DevSecOps
+            </p>
             <div
-              className="space-y-4 text-sm md:text-base transition-all duration-300 ease-in-out"
+                className="flex space-x-4 transform transition-all duration-300 ease-in-out hover:scale-105"
             >
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">About Me</h3>
-              <p className="text-gray-300">
-                Marlon Jerold, also known as Patinho Tech, is a backend developer focused on Java, with experience in tools like Spring, JSF, and Docker.
-              </p>
-              <p className="text-gray-300">
-                With a background in the financial sector, Marlon has worked on banking transaction systems, using REST APIs and microservices, while applying QA practices to ensure quality. Currently, he&apos;s expanding his knowledge in DevSecOps, integrating security throughout the development cycle.
-              </p>
+              <Button variant="ghost" size="icon" asChild className="text-white hover:text-purple-500 transition-colors">
+                <a href="https://github.com/MarlonJerold" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <Github className="h-6 w-6"/>
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild className="text-white hover:text-purple-500 transition-colors">
+                <a href="https://www.linkedin.com/in/marlon-jerold/" target="_blank" rel="noopener noreferrer"
+                   aria-label="LinkedIn">
+                  <Linkedin className="h-6 w-6"/>
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild className="text-white hover:text-purple-500 transition-colors">
+                <a href="https://x.com/patinhotech" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                  <Twitter className="h-6 w-6"/>
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild className="text-white hover:text-purple-500 transition-colors">
+                <a href="https://patinho.tech/" target="_blank" rel="noopener noreferrer" aria-label="Blog">
+                  <ExternalLink className="h-6 w-6"/>
+                </a>
+              </Button>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section id="blog" className="min-h-screen flex flex-col justify-center items-center px-4 py-16">
-          <div className="max-w-4xl w-full">
-            <h3 className="text-2xl md:text-3xl font-bold mb-8">Latest Blog Posts</h3>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {blogPosts.map((post, index) => (
-                <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
-                  <CardHeader>
-                    <div className="flex justify-between items-start">
-                      <Badge variant="secondary" className="bg-purple-500/20 text-purple-300 mb-2">
-                        {post.type}
-                      </Badge>
-                      <div className="flex items-center text-gray-400 text-sm">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-                      </div>
-                    </div>
-                    <CardTitle className="text-xl font-semibold text-gray-100">{post.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-300 text-sm line-clamp-3">{post.excerpt}</p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button variant="link" asChild className="p-0 text-purple-400 hover:text-purple-300">
-                      <a href={post.url} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                        Read More
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </a>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
+          <section id="about" className="min-h-screen flex flex-col justify-center items-center px-4">
+            <div className="max-w-2xl w-full">
+              <div
+                  className="space-y-4 text-sm md:text-base transition-all duration-300 ease-in-out"
+              >
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">About Me</h3>
+                <p className="text-gray-300">
+                  Marlon Jerold, also known as Patinho Tech, is a backend developer focused on Java, with experience in
+                  tools like Spring, JSF, and Docker.
+                </p>
+                <p className="text-gray-300">
+                  With a background in the financial sector, Marlon has worked on banking transaction systems, using REST
+                  APIs and microservices, while applying QA practices to ensure quality. Currently, he&apos;s expanding
+                  his knowledge in DevSecOps, integrating security throughout the development cycle.
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section id="projects" className="min-h-screen flex flex-col justify-center items-center px-4">
-        <div className="max-w-2xl w-full">
-          <div className="grid grid-cols-1 gap-6 transition-all duration-300 ease-in-out">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Projects</h3>
-            {projects.map((project, index) => (
-              <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-xl md:text-2xl font-bold text-white">{project.title}</CardTitle>
-                    <div className="flex gap-2">
-                      {project.isProduction && (
-                        <span className="px-2 py-1 text-xs font-semibold rounded-full bg-green-500/20 text-green-300">
+          <section id="blog" className="min-h-screen flex flex-col justify-center items-center px-4 py-16">
+            <div className="max-w-4xl w-full">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8">Latest Blog Posts</h3>
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {blogPosts.map((post, index) => (
+                    <Card key={index}
+                          className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
+                      <CardHeader>
+                        <div className="flex justify-between items-start">
+                          <Badge variant="secondary" className="bg-purple-500/20 text-purple-300 mb-2">
+                            {post.type}
+                          </Badge>
+                          <div className="flex items-center text-gray-400 text-sm">
+                            <Calendar className="w-4 h-4 mr-1"/>
+                            {new Date(post.date).toLocaleDateString('en-US', {
+                              year: 'numeric',
+                              month: 'short',
+                              day: 'numeric'
+                            })}
+                          </div>
+                        </div>
+                        <CardTitle className="text-xl font-semibold text-gray-100">{post.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-gray-300 text-sm line-clamp-3">{post.excerpt}</p>
+                      </CardContent>
+                      <CardFooter>
+                        <Button variant="link" asChild className="p-0 text-purple-400 hover:text-purple-300">
+                          <a href={post.url} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                            Read More
+                            <ArrowRight className="ml-2 h-4 w-4"/>
+                          </a>
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="projects" className="min-h-screen flex flex-col justify-center items-center px-4">
+            <div className="max-w-2xl w-full">
+              <div className="grid grid-cols-1 gap-6 transition-all duration-300 ease-in-out">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Projects</h3>
+                {projects.map((project, index) => (
+                    <Card key={index}
+                          className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
+                      <CardHeader>
+                        <div className="flex justify-between items-start">
+                          <CardTitle className="text-xl md:text-2xl font-bold text-white">{project.title}</CardTitle>
+                          <div className="flex gap-2">
+                            {project.isProduction && (
+                                <span
+                                    className="px-2 py-1 text-xs font-semibold rounded-full bg-green-500/20 text-green-300">
                           Production
                         </span>
-                      )}
-                      {project.isOpenSource && (
-                        <span className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-500/20 text-blue-300">
+                            )}
+                            {project.isOpenSource && (
+                                <span
+                                    className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-500/20 text-blue-300">
                           Open Source
                         </span>
-                      )}
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm md:text-base text-gray-300 mb-4">{project.description}</p>
-                </CardContent>
-                <CardFooter>
-                  <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-                    {project.url && (
-                      <Button variant="link" asChild className="text-purple-500 hover:text-purple-400">
-                        <a href={project.url} target="_blank" rel="noopener noreferrer">Visit Project</a>
-                      </Button>
-                    )}
-                    {project.repoUrl && (
-                      <Button variant="link" asChild className="text-purple-500 hover:text-purple-400">
-                        <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                          <Github className="w-4 h-4 mr-2" />
-                          View Repository
-                        </a>
-                      </Button>
-                    )}
-                    {project.docsUrl && (
-                      <Button variant="link" asChild className="text-purple-500 hover:text-purple-400">
-                        <a href={project.docsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          View Documentation
-                        </a>
-                      </Button>
-                    )}
-                  </div>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+                            )}
+                          </div>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm md:text-base text-gray-300 mb-4">{project.description}</p>
+                      </CardContent>
+                      <CardFooter>
+                        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+                          {project.url && (
+                              <Button variant="link" asChild className="text-purple-500 hover:text-purple-400">
+                                <a href={project.url} target="_blank" rel="noopener noreferrer">Visit Project</a>
+                              </Button>
+                          )}
+                          {project.repoUrl && (
+                              <Button variant="link" asChild className="text-purple-500 hover:text-purple-400">
+                                <a href={project.repoUrl} target="_blank" rel="noopener noreferrer"
+                                   className="flex items-center">
+                                  <Github className="w-4 h-4 mr-2"/>
+                                  View Repository
+                                </a>
+                              </Button>
+                          )}
+                          {project.docsUrl && (
+                              <Button variant="link" asChild className="text-purple-500 hover:text-purple-400">
+                                <a href={project.docsUrl} target="_blank" rel="noopener noreferrer"
+                                   className="flex items-center">
+                                  <ExternalLink className="w-4 h-4 mr-2"/>
+                                  View Documentation
+                                </a>
+                              </Button>
+                          )}
+                        </div>
+                      </CardFooter>
+                    </Card>
+                ))}
+              </div>
+            </div>
+          </section>
 
 
-        <section id="experience" className="min-h-screen flex flex-col justify-center items-center px-4">
-          <div className="max-w-2xl w-full">
-            <div
-              className="grid grid-cols-1 gap-6 transition-all duration-300 ease-in-out"
-            >
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">Professional Experience</h3>
-              {experiences.map((exp, index) => (
-                <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle className="text-xl md:text-2xl font-bold text-white">{exp.title}</CardTitle>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <Briefcase className="w-4 h-4 mr-2" />
-                      {exp.company} | {exp.period}
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm md:text-base text-gray-300 mb-4">{exp.description}</p>
-                    <div className="mt-4">
-                      <h5 className="text-sm font-semibold text-gray-400 mb-2">Tools & Technologies:</h5>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.tools.map((tool, toolIndex) => (
-                          <Badge key={toolIndex} variant="secondary" className="bg-purple-500/20 text-purple-300">
-                            {tool}
-                          </Badge>
-                        ))}
-                      </div>
+          <section id="experience" className="min-h-screen flex flex-col justify-center items-center px-4">
+            <div className="max-w-2xl w-full">
+              <div
+                  className="grid grid-cols-1 gap-6 transition-all duration-300 ease-in-out"
+              >
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Professional Experience</h3>
+                {experiences.map((exp, index) => (
+                    <Card key={index}
+                          className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
+                      <CardHeader>
+                        <CardTitle className="text-xl md:text-2xl font-bold text-white">{exp.title}</CardTitle>
+                        <div className="flex items-center text-gray-300 text-sm">
+                          <Briefcase className="w-4 h-4 mr-2"/>
+                          {exp.company} | {exp.period}
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm md:text-base text-gray-300 mb-4">{exp.description}</p>
+                        <div className="mt-4">
+                          <h5 className="text-sm font-semibold text-gray-400 mb-2">Tools & Technologies:</h5>
+                          <div className="flex flex-wrap gap-2">
+                            {exp.tools.map((tool, toolIndex) => (
+                                <Badge key={toolIndex} variant="secondary" className="bg-purple-500/20 text-purple-300">
+                                  {tool}
+                                </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="contact" className="min-h-screen flex flex-col justify-center items-center px-4">
+            <div className="max-w-2xl w-full">
+              <div className="grid grid-cols-1 gap-6 transition-all duration-300 ease-in-out">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Contact Me</h3>
+                <Card
+                    className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
+                  <CardContent className="p-6">
+                    <p className="text-sm md:text-base text-gray-300 mb-6">
+                      Feel free to reach out to me through any of the following channels:
+                    </p>
+                    <div className="space-y-4">
+                      <a href="mailto:marlonjerold@outlook.com.br"
+                         className="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                        <Mail className="w-5 h-5 mr-3"/>
+                        marlonjerold@outlook.com.br
+                      </a>
+                      <a href="https://www.linkedin.com/in/marlon-jerold/" target="_blank" rel="noopener noreferrer"
+                         className="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                        <Linkedin className="w-5 h-5 mr-3"/>
+                        linkedin.com/in/marlon-jerold
+                      </a>
+                      <a href="https://x.com/patinhotech" target="_blank" rel="noopener noreferrer"
+                         className="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                        <Twitter className="w-5 h-5 mr-3"/>
+                        @patinhotech
+                      </a>
+                      <a href="https://github.com/MarlonJerold" target="_blank" rel="noopener noreferrer"
+                         className="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                        <Github className="w-5 h-5 mr-3"/>
+                        github.com/MarlonJerold
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
-              ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </main>
 
-        <section id="contact" className="min-h-screen flex flex-col justify-center items-center px-4">
-          <div className="max-w-2xl w-full">
-            <div className="grid grid-cols-1 gap-6 transition-all duration-300 ease-in-out">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">Contact Me</h3>
-              <Card className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <p className="text-sm md:text-base text-gray-300 mb-6">
-                    Feel free to reach out to me through any of the following channels:
-                  </p>
-                  <div className="space-y-4">
-                    <a href="mailto:marlon.jerold@example.com" className="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                      <Mail className="w-5 h-5 mr-3" />
-                      marlon.jerold@example.com
-                    </a>
-                    <a href="https://linkedin.com/in/marlonjerold" target="_blank" rel="noopener noreferrer" className="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                      <Linkedin className="w-5 h-5 mr-3" />
-                      linkedin.com/in/marlonjerold
-                    </a>
-                    <a href="https://twitter.com/marlonjerold" target="_blank" rel="noopener noreferrer" className="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                      <Twitter className="w-5 h-5 mr-3" />
-                      @marlonjerold
-                    </a>
-                    <a href="https://github.com/MarlonJerold" target="_blank" rel="noopener noreferrer" className="flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                      <Github className="w-5 h-5 mr-3" />
-                      github.com/MarlonJerold
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer className="border-t border-gray-800 py-4 text-center text-gray-400 text-sm">
-        <p>&copy; {new Date().getFullYear()} Marlon Jerold. All rights reserved.</p>
-      </footer>
-    </div>
+        <footer className="border-t border-gray-800 py-4 text-center text-gray-400 text-sm">
+          <p>&copy; {new Date().getFullYear()} Marlon Jerold. All rights reserved.</p>
+        </footer>
+      </div>
   )
 }
