@@ -62,14 +62,6 @@ const projects = [
     isProduction: true,
     isOpenSource: true,
   },
-  {
-    title: "BskyAgent",
-    description: "BskyAgent is a library designed to interact with the Bsky API in a simple and effective way for Java applications. It provides an easy-to-use interface for developers to integrate Bluesky functionality into their Java projects.",
-    repoUrl: "https://github.com/MarlonJerold/bskyAgent",
-    docsUrl: "https://bsky-agent.vercel.app/",
-    isProduction: false,
-    isOpenSource: true,
-  },
 ]
 
 export function DeveloperSiteComponent() {
