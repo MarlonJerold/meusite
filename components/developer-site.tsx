@@ -294,7 +294,6 @@ export function DeveloperSiteComponent() {
                       <CardContent>
                         <p className="text-sm md:text-base text-gray-300 mb-4">{exp.description}</p>
                         <div className="mt-4">
-                          <h5 className="text-sm font-semibold text-gray-400 mb-2">Tools & Technologies:</h5>
                           <div className="flex flex-wrap gap-2">
                             {exp.tools.map((tool, toolIndex) => (
                                 <Badge key={toolIndex} variant="secondary" className="bg-purple-500/20 text-purple-300">
