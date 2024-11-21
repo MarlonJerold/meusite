@@ -165,13 +165,10 @@ export function DeveloperSiteComponent() {
               >
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">About Me</h3>
                 <p className="text-gray-300">
-                  Marlon Jerold, also known as Patinho Tech, is a backend developer focused on Java, with experience in
-                  tools like Spring, JSF, and Docker.
+                  Hi
                 </p>
                 <p className="text-gray-300">
-                  With a background in the financial sector, Marlon has worked on banking transaction systems, using REST
-                  APIs and microservices, while applying QA practices to ensure quality. Currently, he&apos;s expanding
-                  his knowledge in DevSecOps, integrating security throughout the development cycle.
+                  My name is Marlon, and I am a software developer with experience in small, medium, and currently large companies, working in the field since 2020. Throughout my career, I have had the opportunity to work in environments that use microservices, ensuring the quality of banking transactions. I have also worked with legacy monolithic systems in the Java ecosystem. Currently, I am transitioning into the DevSecOps field, where I am an intern at @Compass UOL.
                 </p>
               </div>
             </div>
