@@ -5,6 +5,7 @@ import { Github, ExternalLink, Calendar, Briefcase, Mail, Linkedin, Twitter, Arr
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { cn } from "@/lib/utils"
 
 const blogPosts = [
   {
@@ -61,15 +62,7 @@ const projects = [
     url: "https://milho.site",
     isProduction: true,
     isOpenSource: true,
-  },
-  {
-    title: "BskyAgent",
-    description: "BskyAgent is a library designed to interact with the Bsky API in a simple and effective way for Java applications. It provides an easy-to-use interface for developers to integrate Bluesky functionality into their Java projects.",
-    repoUrl: "https://github.com/MarlonJerold/bskyAgent",
-    docsUrl: "https://bsky-agent.vercel.app/",
-    isProduction: false,
-    isOpenSource: true,
-  },
+  }
 ]
 
 export function DeveloperSiteComponent() {
@@ -120,12 +113,11 @@ export function DeveloperSiteComponent() {
 
         <main className="flex-grow flex flex-col justify-between pt-16 pb-8 px-4">
           <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center px-4">
-            <h2
+            <h1
                 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 transform transition-all duration-300 ease-in-out hover:scale-105"
             >
-              I&apos;m <span
-                className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Marlon</span>
-            </h2>
+              I&apos;m <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Marlon</span>
+            </h1>
             <p
                 className="text-xl md:text-2xl lg:text-3xl text-gray-400 mb-8 transform transition-all duration-300 ease-in-out hover:scale-105"
             >
@@ -163,12 +155,9 @@ export function DeveloperSiteComponent() {
               <div
                   className="space-y-4 text-sm md:text-base transition-all duration-300 ease-in-out"
               >
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">About Me</h3>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">About Me</h2>
                 <p className="text-gray-300">
-                  Hi
-                </p>
-                <p className="text-gray-300">
-                  My name is Marlon, and I am a software developer with experience in small, medium, and currently large companies, working in the field since 2020. Throughout my career, I have had the opportunity to work in environments that use microservices, ensuring the quality of banking transactions. I have also worked with legacy monolithic systems in the Java ecosystem. Currently, I am transitioning into the DevSecOps field, where I am an intern at @Compass UOL.
+                  Hi, I&apos;m Marlon, a software developer with experience in small, medium, and large companies since 2020. I&apos;ve worked with microservices, ensuring the quality of banking transactions, and with legacy monolithic systems in the Java ecosystem. Currently, I&apos;m transitioning into DevSecOps as an intern at Compass UOL.
                 </p>
               </div>
             </div>
@@ -176,7 +165,7 @@ export function DeveloperSiteComponent() {
 
           <section id="blog" className="min-h-screen flex flex-col justify-center items-center px-4 py-16">
             <div className="max-w-4xl w-full">
-              <h3 className="text-2xl md:text-3xl font-bold mb-8">Latest Blog Posts</h3>
+              <h2 className="text-2xl md:text-3xl font-bold mb-8">Latest Blog Posts</h2>
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {blogPosts.map((post, index) => (
                     <Card key={index}
@@ -217,7 +206,7 @@ export function DeveloperSiteComponent() {
           <section id="projects" className="min-h-screen flex flex-col justify-center items-center px-4">
             <div className="max-w-2xl w-full">
               <div className="grid grid-cols-1 gap-6 transition-all duration-300 ease-in-out">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">Projects</h3>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Projects</h2>
                 {projects.map((project, index) => (
                     <Card key={index}
                           className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
@@ -227,15 +216,19 @@ export function DeveloperSiteComponent() {
                           <div className="flex gap-2">
                             {project.isProduction && (
                                 <span
-                                    className="px-2 py-1 text-xs font-semibold rounded-full bg-green-500/20 text-green-300">
-                          Production
-                        </span>
+                                    className={cn(
+                                        "px-2 py-1 text-xs font-semibold rounded-full bg-green-500/20 text-green-300",
+                                        "animate-pulse-neon"
+                                    )}
+                                >
+                            Production
+                          </span>
                             )}
                             {project.isOpenSource && (
                                 <span
                                     className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-500/20 text-blue-300">
-                          Open Source
-                        </span>
+                            Open Source
+                          </span>
                             )}
                           </div>
                         </div>
@@ -250,24 +243,6 @@ export function DeveloperSiteComponent() {
                                 <a href={project.url} target="_blank" rel="noopener noreferrer">Visit Project</a>
                               </Button>
                           )}
-                          {project.repoUrl && (
-                              <Button variant="link" asChild className="text-purple-500 hover:text-purple-400">
-                                <a href={project.repoUrl} target="_blank" rel="noopener noreferrer"
-                                   className="flex items-center">
-                                  <Github className="w-4 h-4 mr-2"/>
-                                  View Repository
-                                </a>
-                              </Button>
-                          )}
-                          {project.docsUrl && (
-                              <Button variant="link" asChild className="text-purple-500 hover:text-purple-400">
-                                <a href={project.docsUrl} target="_blank" rel="noopener noreferrer"
-                                   className="flex items-center">
-                                  <ExternalLink className="w-4 h-4 mr-2"/>
-                                  View Documentation
-                                </a>
-                              </Button>
-                          )}
                         </div>
                       </CardFooter>
                     </Card>
@@ -276,13 +251,12 @@ export function DeveloperSiteComponent() {
             </div>
           </section>
 
-
           <section id="experience" className="min-h-screen flex flex-col justify-center items-center px-4">
             <div className="max-w-2xl w-full">
               <div
                   className="grid grid-cols-1 gap-6 transition-all duration-300 ease-in-out"
               >
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">Professional Experience</h3>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Professional Experience</h2>
                 {experiences.map((exp, index) => (
                     <Card key={index}
                           className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
@@ -296,7 +270,7 @@ export function DeveloperSiteComponent() {
                       <CardContent>
                         <p className="text-sm md:text-base text-gray-300 mb-4">{exp.description}</p>
                         <div className="mt-4">
-                          <h5 className="text-sm font-semibold text-gray-400 mb-2">Tools & Technologies:</h5>
+                          <h3 className="text-sm font-semibold text-gray-400 mb-2">Tools & Technologies:</h3>
                           <div className="flex flex-wrap gap-2">
                             {exp.tools.map((tool, toolIndex) => (
                                 <Badge key={toolIndex} variant="secondary" className="bg-purple-500/20 text-purple-300">
@@ -315,7 +289,7 @@ export function DeveloperSiteComponent() {
           <section id="contact" className="min-h-screen flex flex-col justify-center items-center px-4">
             <div className="max-w-2xl w-full">
               <div className="grid grid-cols-1 gap-6 transition-all duration-300 ease-in-out">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">Contact Me</h3>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Contact Me</h2>
                 <Card
                     className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
                   <CardContent className="p-6">
@@ -350,6 +324,22 @@ export function DeveloperSiteComponent() {
             </div>
           </section>
         </main>
+
+        <style jsx global>{`
+        @keyframes pulseNeon {
+          0%, 100% {
+            opacity: 1;
+            text-shadow: 0 0 5px #4ade80, 0 0 10px #4ade80, 0 0 15px #4ade80, 0 0 20px #4ade80;
+          }
+          50% {
+            opacity: 0.5;
+            text-shadow: none;
+          }
+        }
+        .animate-pulse-neon {
+          animation: pulseNeon 3s ease-in-out infinite;
+        }
+      `}</style>
 
         <footer className="border-t border-gray-800 py-4 text-center text-gray-400 text-sm">
           <p>&copy; {new Date().getFullYear()} Marlon Jerold. All rights reserved.</p>
