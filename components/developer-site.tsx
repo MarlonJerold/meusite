@@ -169,10 +169,10 @@ export function DeveloperSiteComponent() {
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {blogPosts.map((post, index) => (
                     <Card key={index}
-                          className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
-                      <CardHeader>
+                          className="bg-gradient-to-b from-gray-900/80 to-black/80 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-purple-500/20 glass-card">
+                      <CardHeader className="bg-gradient-to-b from-purple-800/30 to-transparent">
                         <div className="flex justify-between items-start">
-                          <Badge variant="secondary" className="bg-purple-500/20 text-purple-300 mb-2">
+                          <Badge variant="secondary" className="bg-purple-800/40 text-purple-300 mb-2">
                             {post.type}
                           </Badge>
                           <div className="flex items-center text-gray-400 text-sm">
@@ -187,7 +187,7 @@ export function DeveloperSiteComponent() {
                         <CardTitle className="text-xl font-semibold text-gray-100">{post.title}</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-gray-300 text-sm line-clamp-3">{post.excerpt}</p>
+                        <p className="text-gray-200 text-sm line-clamp-3">{post.excerpt}</p>
                       </CardContent>
                       <CardFooter>
                         <Button variant="link" asChild className="p-0 text-purple-400 hover:text-purple-300">
@@ -209,15 +209,15 @@ export function DeveloperSiteComponent() {
                 <h2 className="text-2xl md:text-3xl font-bold mb-4">Projects</h2>
                 {projects.map((project, index) => (
                     <Card key={index}
-                          className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
-                      <CardHeader>
+                          className="bg-gradient-to-br from-gray-900/80 via-black/80 to-gray-900/80 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-purple-500/20 glass-card">
+                      <CardHeader className="bg-gradient-to-b from-purple-800/30 to-transparent">
                         <div className="flex flex-col items-start gap-2">
                           <CardTitle className="text-xl md:text-2xl font-bold text-white">{project.title}</CardTitle>
                           <div className="flex flex-wrap gap-2">
                             {project.isProduction && (
                                 <span
                                     className={cn(
-                                        "px-2 py-1 text-xs font-semibold rounded-full bg-green-500/20 text-green-300",
+                                        "px-2 py-1 text-xs font-semibold rounded-full bg-green-800/40 text-green-300",
                                         "animate-pulse-neon"
                                     )}
                                 >
@@ -226,7 +226,7 @@ export function DeveloperSiteComponent() {
                             )}
                             {project.isOpenSource && (
                                 <span
-                                    className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-500/20 text-blue-300">
+                                    className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-800/40 text-blue-300">
                             Open Source
                           </span>
                             )}
@@ -234,7 +234,7 @@ export function DeveloperSiteComponent() {
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-sm md:text-base text-gray-300 mb-4">{project.description}</p>
+                        <p className="text-sm md:text-base text-gray-200 mb-4">{project.description}</p>
                       </CardContent>
                       <CardFooter>
                         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
@@ -259,8 +259,8 @@ export function DeveloperSiteComponent() {
                 <h2 className="text-2xl md:text-3xl font-bold mb-4">Professional Experience</h2>
                 {experiences.map((exp, index) => (
                     <Card key={index}
-                          className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
-                      <CardHeader>
+                          className="bg-gradient-to-br from-gray-900/80 via-black/80 to-gray-900/80 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-purple-500/20 glass-card">
+                      <CardHeader className="bg-gradient-to-b from-purple-800/30 to-transparent">
                         <CardTitle className="text-xl md:text-2xl font-bold text-white">{exp.title}</CardTitle>
                         <div className="flex items-center text-gray-300 text-sm">
                           <Briefcase className="w-4 h-4 mr-2"/>
@@ -268,12 +268,12 @@ export function DeveloperSiteComponent() {
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-sm md:text-base text-gray-300 mb-4">{exp.description}</p>
+                        <p className="text-sm md:text-base text-gray-200 mb-4">{exp.description}</p>
                         <div className="mt-4">
                           <h3 className="text-sm font-semibold text-gray-400 mb-2">Tools & Technologies:</h3>
                           <div className="flex flex-wrap gap-2">
                             {exp.tools.map((tool, toolIndex) => (
-                                <Badge key={toolIndex} variant="secondary" className="bg-purple-500/20 text-purple-300">
+                                <Badge key={toolIndex} variant="secondary" className="bg-purple-800/40 text-purple-300">
                                   {tool}
                                 </Badge>
                             ))}
@@ -291,9 +291,9 @@ export function DeveloperSiteComponent() {
               <div className="grid grid-cols-1 gap-6 transition-all duration-300 ease-in-out">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4">Contact Me</h2>
                 <Card
-                    className="bg-gray-800/50 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm">
+                    className="bg-gradient-to-br from-gray-900/80 via-black/80 to-gray-900/80 border-gray-700 hover:border-purple-500 transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-purple-500/20 glass-card">
                   <CardContent className="p-6">
-                    <p className="text-sm md:text-base text-gray-300 mb-6">
+                    <p className="text-sm md:text-base text-gray-200 mb-6">
                       Feel free to reach out to me through any of the following channels:
                     </p>
                     <div className="space-y-4">
@@ -339,6 +339,37 @@ export function DeveloperSiteComponent() {
           .animate-pulse-neon {
             animation: pulseNeon 3s ease-in-out infinite;
           }
+          .glass-card {
+            position: relative;
+            overflow: hidden;
+          }
+          .glass-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.05) 0%,
+                rgba(255, 255, 255, 0.02) 40%,
+                rgba(255, 255, 255, 0) 60%
+            );
+            transform: rotate(-45deg);
+            pointer-events: none;
+          }
+          .glass-card:hover::before {
+            animation: glass-shine 1.5s ease-in-out;
+          }
+          @keyframes glass-shine {
+            0% {
+              transform: rotate(-45deg) translate(-50%, -50%);
+            }
+            100% {
+              transform: rotate(-45deg) translate(150%, 150%);
+            }
+          }
         `}</style>
 
         <footer className="border-t border-gray-800 py-4 text-center text-gray-400 text-sm">
@@ -347,3 +378,4 @@ export function DeveloperSiteComponent() {
       </div>
   )
 }
+
