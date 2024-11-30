@@ -79,7 +79,7 @@ export default function Home() {
               </a>
             </div>
               <p className="text-gray-300 text-sm">
-                  Hi, I&apos;m Marlon, a software developer with experience since 2020. Currently transitioning into
+                  Hi, I&apos;m Marlon, a software developer with experience since 2022. Currently transitioning into
                   DevSecOps at Compass UOL.
               </p>
           </section>
