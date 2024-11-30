@@ -1,6 +1,7 @@
-import { Card, } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink, Linkedin, Twitter } from 'lucide-react'
+import { Github, ExternalLink, Linkedin, Twitter, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 const blogPosts = [
@@ -27,6 +28,14 @@ const blogPosts = [
   }
 ]
 
+const project = {
+  title: "Milho News",
+  description: "Milho News is your daily news portal about what's happening on Bluesky for the Brazilian developer community. In a fully open-source project, we bring you the top news, trends, hot discussions, and career opportunities, all in direct and practical summaries. With Milho News, you stay up to date on what matters in the dev world without missing a thing.",
+  url: "https://milho.site",
+  isProduction: true,
+  isOpenSource: true,
+}
+
 export default function Home() {
   return (
       <>
@@ -41,7 +50,7 @@ export default function Home() {
                     I&apos;m <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Marlon</span>
                   </h1>
                   <p className="text-xl md:text-2xl text-gray-400 mb-8 font-bold tracking-wider">
-                    Software Developer | DevSecOps
+                    DevSecOps
                   </p>
                   <div className="flex space-x-4 mb-8">
                     <a
@@ -92,7 +101,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full md:w-3/5">
-                <div className="space-y-4">
+                <div className="space-y-4 mb-8">
+                  <h2 className="text-2xl font-bold mb-4 border-b border-white pb-2">Latest Blog Posts</h2>
                   {blogPosts.map((post, index) => (
                       <Card key={index} className="bg-black border-t border-white hover:bg-gray-900 transition-colors duration-200 px-4 py-3">
                         <div className="flex justify-between items-center mb-2">
@@ -113,6 +123,27 @@ export default function Home() {
                         </Link>
                       </Card>
                   ))}
+                </div>
+                <div className="mt-12">
+                  <h2 className="text-2xl font-bold mb-4 border-b border-white pb-2">Featured Project</h2>
+                  <Card className="bg-black border-2 border-white hover:bg-gray-900 transition-colors duration-200 p-6">
+                    <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
+                    <div className="flex space-x-2 mb-4">
+                      {project.isProduction && (
+                          <Badge className="bg-green-500 text-black">Production</Badge>
+                      )}
+                      {project.isOpenSource && (
+                          <Badge className="bg-blue-500 text-black">Open Source</Badge>
+                      )}
+                    </div>
+                    <p className="text-gray-300 mb-4">{project.description}</p>
+                    <Button asChild className="bg-white text-black hover:bg-gray-200 transition-colors duration-200">
+                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                        Visit Project
+                        <ArrowRight className="ml-2 h-4 w-4"/>
+                      </a>
+                    </Button>
+                  </Card>
                 </div>
               </div>
             </section>
