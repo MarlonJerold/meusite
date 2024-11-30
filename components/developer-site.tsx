@@ -1,7 +1,6 @@
-import { Button } from "@/components/ui/button"
 import { Card, } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink, Linkedin, Twitter, Calendar, ArrowRight } from 'lucide-react'
+import { Github, ExternalLink, Linkedin, Twitter } from 'lucide-react'
 import Link from 'next/link'
 
 const blogPosts = [
