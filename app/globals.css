@@ -1,62 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 0%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 0 0% 100%;
-    --accent-foreground: 0 0% 0%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 100%;
-    --input: 0 0% 100%;
-    --ring: 0 0% 100%;
-    --radius: 0rem;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
 }
 
 body {
-    font-family: 'Oswald', sans-serif;
-    background-color: black;
-    color: white;
-    letter-spacing: 0.025em;
+    font-family: 'Inter', sans-serif;
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+            to bottom,
+            transparent,
+            rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
-
-.manga-title {
-    font-family: 'Bangers', cursive;
-    letter-spacing: 2px;
-    text-shadow:
-            -1px -1px 0 #fff,
-            1px -1px 0 #fff,
-            -1px  1px 0 #fff,
-            1px  1px 0 #fff;
-    color: black;
-}
-
-@keyframes flicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
-}
-
-.animate-flicker {
-    animation: flicker 2s infinite;
-}
-
-@layer utilities {
-    .text-shadow-white {
-        text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
-    }
-}
-
