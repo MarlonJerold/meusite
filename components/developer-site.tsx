@@ -78,13 +78,14 @@ export default function Home() {
                 <ExternalLink className="h-6 w-6" />
               </a>
             </div>
-            <p className="text-gray-300 text-sm">
-              Hi, I'm Marlon, a software developer with experience since 2020. Currently transitioning into DevSecOps at Compass UOL.
-            </p>
+              <p className="text-gray-300 text-sm">
+                  Hi, I&apos;m Marlon, a software developer with experience since 2020. Currently transitioning into
+                  DevSecOps at Compass UOL.
+              </p>
           </section>
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Blog Posts</h2>
-            {blogPosts.map((post, index) => (
+            <section className="mb-12">
+                <h2 className="text-2xl font-bold mb-4">Blog Posts</h2>
+                {blogPosts.map((post, index) => (
                 <Link key={index} href={post.url} className="block mb-4 group">
                   <h3 className="text-white font-bold group-hover:underline">{post.title}</h3>
                   <p className="text-gray-400 text-sm">{post.excerpt}</p>
