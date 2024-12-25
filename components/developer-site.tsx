@@ -69,7 +69,7 @@ export default function Home() {
                 <Twitter className="h-6 w-6" />
               </a>
               <a
-                  href="https://patinho.tech/"
+                  href="https://blog.marlonjerold.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white text-black p-2 hover:bg-gray-200 transition-colors duration-200"
