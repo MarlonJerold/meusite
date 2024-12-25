@@ -6,21 +6,21 @@ const blogPosts = [
     title: "Computer networks",
     type: "Networks",
     date: "2024-11-13",
-    url: "https://patinho.tech/redes",
+    url: "https://blog.marlonjerold.com/redes",
     excerpt: "Dive into the fascinating world of computer networks and discover how they shape our digital landscape."
   },
   {
     title: "Does asynchronous exist?",
     type: "blog",
     date: "2024-11-03",
-    url: "https://patinho.tech/assincrono-existe",
+    url: "https://blog.marlonjerold.com/assincrono-existe",
     excerpt: "Explore the concept of asynchronous programming and its impact on modern software development."
   },
   {
     title: "Paths to creating your first library",
     type: "Documentation",
     date: "2024-09-22",
-    url: "https://patinho.tech/primeira-lin",
+    url: "https://blog.marlonjerold.com/primeira-lin",
     excerpt: "Learn the step-by-step process of creating and publishing your very first software library."
   }
 ]
