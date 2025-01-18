@@ -1,4 +1,4 @@
-import { Github, ExternalLink, Linkedin, Twitter } from 'lucide-react';
+import { Github, ExternalLink, Linkedin} from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
